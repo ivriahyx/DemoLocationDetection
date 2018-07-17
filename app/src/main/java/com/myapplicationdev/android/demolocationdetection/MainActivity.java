@@ -21,7 +21,7 @@ import com.google.android.gms.tasks.Task;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btnGetLastLocation, btnGetLocation, btnRemoveLocation;
+    Button btnGetLastLocation, btnUpdateLocation, btnRemoveLocation;
     FusedLocationProviderClient client;
     LocationCallback mLocationCallback;
     @Override
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         client = 	LocationServices.getFusedLocationProviderClient(this);
 
         btnGetLastLocation = (Button)findViewById(R.id.btnGetLastLocation);
-        btnGetLocation = (Button)findViewById(R.id.btnGetLocationUpdate);
+        btnUpdateLocation = (Button)findViewById(R.id.btnGetLocationUpdate);
         btnRemoveLocation = (Button)findViewById(R.id.btnRemoveLocationUpdate);
 
          mLocationCallback = new LocationCallback() {
@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
                  }
             }
         });
-        btnGetLocation.setOnClickListener(new View.OnClickListener() {
+        btnUpdateLocation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (checkPermission() == true) {
